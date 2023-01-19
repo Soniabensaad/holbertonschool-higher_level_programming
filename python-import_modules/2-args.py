@@ -14,8 +14,3 @@ if __name__ == "__main__":
             continue
         else:
             print("{}: {}".format((i), argument))
-
-        
-    
-
-
