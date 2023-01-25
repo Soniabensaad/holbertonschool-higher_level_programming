@@ -5,4 +5,3 @@ def simple_delete(a_dictionary, key=""):
             remove_key = a_dictionary.pop(key)
             return a_dictionary
     return a_dictionary
-        
