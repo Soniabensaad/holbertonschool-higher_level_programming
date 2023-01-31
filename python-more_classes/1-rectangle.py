@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 """
-Program that defines a class
+1-rectangle, built for Holberton Python projec
 """
 
 
 class Rectangle:
-    """Defines a Rectangle"""
+    """
+    Args:
+        width (int): horizontal dimension of rectangle, defaults to 0
+        height (int): vertical dimension of rectangle, defaults to 0
+    """
     def __init__(self, width=0, height=0):
         """initilize parameters"""
         self.__width = width
@@ -13,13 +17,23 @@ class Rectangle:
 
     @property
     def width(self):
-        """Getter method"""
+        """Getter method
+        Returns:
+            __width (int): horizontal dimension of rectangle
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """set value of width"""
-        if type(value) != int:
+        """Args:
+            value (int): horizontal dimension of rectangle
+        Attributes:
+            __width (int): horizontal dimension of rectangle
+        Raises:
+            TypeError: If `value` is not an int.
+            ValueError: If `value` is less than 0.
+        """
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -27,13 +41,23 @@ class Rectangle:
 
     @property
     def height(self):
-        """Getter method"""
+        """Getter method
+        Returns:
+            __height (int): vertical dimension of rectangle
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """set value of height"""
-        if type(value) != int:
+        """Args:
+            value (int): vertical dimension of rectangle
+        Attributes:
+            __height (int): vertical dimension of rectangle
+        Raises:
+            TypeError: If `value` is not an int.
+            ValueError: If `value` is less than 0.
+        """
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
