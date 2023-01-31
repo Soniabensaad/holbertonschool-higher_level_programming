@@ -1,6 +1,11 @@
 #!/usr/bin/python3
+"""
+Program that defines a class
+"""
+
+
 class Rectangle:
-    """Defines a  class rectangle
     """
-    def __init__(self):
-       pass
+    Defines a empty class called Rectangle
+    """
+    pass
