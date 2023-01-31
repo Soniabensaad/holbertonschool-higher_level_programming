@@ -7,6 +7,7 @@ Program that defines a class
 class Rectangle:
     """Defines a Rectangle"""
     def __init__(self, width=0, height=0):
+        """initilize parameters"""
         self.__width = width
         self.__height = height
 
