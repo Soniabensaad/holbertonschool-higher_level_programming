@@ -10,7 +10,7 @@ class Rectangle:
         height (int): vertical dimension of rectangle, defaults to 0
     """
     def __init__(self, width=0, height=0):
-        # attribute assigment here engages setters defined below
+       
         self.width = width
         self.height = height
 
