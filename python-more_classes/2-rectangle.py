@@ -79,4 +79,3 @@ class Rectangle:
             return 0
         else:
             return perimeter
-
