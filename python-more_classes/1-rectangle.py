@@ -5,6 +5,7 @@ Program that defines a class
 
 
 class Rectangle:
+    """Defines a Rectangle"""
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
@@ -15,6 +16,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
+        """get value of width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -27,6 +29,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """get value of height"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
