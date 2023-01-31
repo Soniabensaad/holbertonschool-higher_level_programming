@@ -1,9 +1,7 @@
 Using ``add_integer``
 -----------------------
 
-Parameter "b" is defaulted to int "98"
-Makes sure the parameters are type int
-Returns the sum of the parameters
+
 
 First import ``add_integer``
 
@@ -24,12 +22,12 @@ One input:
     100
 
 Float and negative input:
-    >>> add_integer(100.3, -2)
+    >>> add_integer(100.1, -2)
     98
 
 Float overflow:
-    >>> add_integer(1500.5)
-    1598
+    >>> add_integer(1300.3)
+    1398
 
 Float NaN:
     >>> add_integer(float('NaN'))
@@ -38,7 +36,7 @@ Float NaN:
     ValueError: cannot convert float NaN to integer
 
 String input:
-    >>> add_integer(4, "School")
+    >>> add_integer(2, "School")
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
