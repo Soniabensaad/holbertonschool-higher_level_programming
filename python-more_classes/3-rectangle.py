@@ -89,4 +89,4 @@ class Rectangle:
                     rectangle += "#"
                 rectangle += "\n"
         return rectangle[:-1]
-        
+
