@@ -91,8 +91,7 @@ class Rectangle:
     def __repr__(self):
         """Return the canonical string representation of the object"""
         return 'Rectangle({}, {})'.format(self.__width, self.__height)
+
     def __del__(self):
         """called when an instance of the class is about to be destroyed"""
         print("Bye rectangle...")
-
-
