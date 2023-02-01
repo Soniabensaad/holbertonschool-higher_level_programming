@@ -87,6 +87,7 @@ class Rectangle:
             for i in range(self.__height):
                 rectangle += "#" * self.__width + "\n"
         return rectangle[:-1]
+
     def __repr__(self):
         """Return the canonical string representation of the object"""
         return 'Rectangle({}, {})'.format(self.__width, self.__height)
