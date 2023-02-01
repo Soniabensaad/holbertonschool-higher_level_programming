@@ -1,0 +1,122 @@
+The ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided``
+------------------------
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Division by integer:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, 2)
+	[[0.5, 1.0, 1.5], [2.0, 2.5, 4.0]]
+
+Matrix not  int or float:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, "school", 6]
+	... ]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):	
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix with different size:
+	>>> matrix = [
+	...	[1, 2],
+	...	[3, 4, 5]
+	... ]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):	
+	TypeError: Each row of the matrix must have the same size
+
+Matrix divided by string:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, "holberton")
+	Traceback (most recent call last):	
+	TypeError: div must be a number
+
+Matrix divided by zero:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):	
+	ZeroDivisionError: division by zero
+
+Empty matrix:
+	>>> matrix = [
+	...	[],
+	...	[]
+	... ]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):	
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix is None:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(None, 3)
+	Traceback (most recent call last):	
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division is None:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, None)
+	Traceback (most recent call last):	
+	TypeError: div must be a number
+
+No matrix passed:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(, 3)
+	Traceback (most recent call last):	
+	SyntaxError: invalid syntax
+
+No div passed:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, None)
+	Traceback (most recent call last):	
+	TypeError: div must be a number
+
+Inf as div passed:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, float("inf"))
+    	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+NaN as div passed:
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, float("nan"))
+	Traceback (most recent call last):	
+	TypeError: div must be a number
+
+Mixed types in matrix:
+	>>> matrix = [
+	...	[1, 2.5, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, 3)
+    	[[0.33, 0.83, 1.0], [1.33, 1.67, 2.0]]
+
