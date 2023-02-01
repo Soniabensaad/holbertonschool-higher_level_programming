@@ -19,7 +19,7 @@ Matrix not  int or float:
 	...	[1, 2, 3],
 	...	[4, "school", 6]
 	... ]
-	>>> matrix_divided(matrix, 2)
+	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):	
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
