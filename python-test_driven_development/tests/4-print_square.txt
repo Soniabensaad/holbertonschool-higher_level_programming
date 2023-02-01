@@ -39,10 +39,9 @@ Using ``print_square``
     	ValueError: size must be >= 0
 	
 String:
-	>>> print_square("hello")
+	>>> print_square("s")
     	Traceback (most recent call last):
     	TypeError: size must be an integer
-
 
 No argument
 	>>> print_square()
