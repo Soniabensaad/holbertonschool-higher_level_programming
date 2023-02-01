@@ -85,8 +85,6 @@ class Rectangle:
         rectangle = ""
         if self.__width > 0 and self.__height > 0:
             for i in range(self.__height):
-                for j in range(self.__width):
-                    rectangle += "#"
-                rectangle += "\n"
+                rectangle += "#" * self.__width + "\n"
         return rectangle[:-1]
 
