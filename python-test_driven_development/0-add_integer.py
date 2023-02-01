@@ -6,7 +6,6 @@ add_integer:
 """
 
 
-
 def add_integer(a, b=98):
     """
     returns sum
