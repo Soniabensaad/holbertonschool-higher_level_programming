@@ -9,7 +9,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_positive_elements(self):
         self.assertEqual(max_integer([1, 2, 3, 4, 5]), 5)
     def test_mixed_elements(self):
-        self.assertEqual(max_integer([-2, -1, 3, 4]), 4)
+        self.assertEqual(max_integer([-2, 3, -1, 4]), 4)
     def test_negative_elements(self):
         self.assertEqual(max_integer([-1, -2, -3, -5]), -1)
 if __name__ == '__main__':
