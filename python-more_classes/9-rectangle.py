@@ -102,7 +102,6 @@ class Rectangle:
         """returns a new Rectangle instance with width == height == size"""
         return cls(size, size)
 
-
     def __str__(self):
         """Create a new string object from the given object"""
         rectangle = ""
