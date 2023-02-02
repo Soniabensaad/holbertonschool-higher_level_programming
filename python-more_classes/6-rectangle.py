@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""4-rectangle, built for Holberton Python.
+"""3-rectangle, built for Holberton Python.
 """
 
 
@@ -9,9 +9,11 @@ class Rectangle:
         width (int): horizontal dimension of rectangle, defaults to 0
         height (int): vertical dimension of rectangle, defaults to 0
     """
+    number_of_instances = 0
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -61,6 +63,7 @@ class Rectangle:
             raise ValueError('height must be >= 0')
         self.__height = value
 
+    
     def area(self):
         """
         Returns:
@@ -91,3 +94,8 @@ class Rectangle:
     def __repr__(self):
         """Return the canonical string representation of the object"""
         return 'Rectangle({}, {})'.format(self.__width, self.__height)
+
+    def __del__(self):
+        """called when an instance of the class is about to be destroyed"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1

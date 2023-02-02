@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""3-rectangle, built for Holberton Python.
+"""5-rectangle, built for Holberton Python.
 """
 
 
