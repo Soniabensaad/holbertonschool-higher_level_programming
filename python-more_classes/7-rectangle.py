@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""6-rectangle, built for Holberton Python.
+"""7-rectangle, built for Holberton Python.
 """
 
 
@@ -9,6 +9,7 @@ class Rectangle:
         width (int): horizontal dimension of rectangle, defaults to 0
         height (int): vertical dimension of rectangle, defaults to 0
     """
+    print_symbol = "#"
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -88,7 +89,7 @@ class Rectangle:
         rectangle = ""
         if self.__width > 0 and self.__height > 0:
             for i in range(self.__height):
-                rectangle += "#" * self.__width + "\n"
+                rectangle += str(self.print_symbol) * self.__width + "\n"
         return rectangle[:-1]
 
     def __repr__(self):
