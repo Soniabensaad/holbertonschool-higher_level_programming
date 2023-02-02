@@ -10,6 +10,7 @@ class Rectangle:
         height (int): vertical dimension of rectangle, defaults to 0
     """
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -63,7 +64,6 @@ class Rectangle:
             raise ValueError('height must be >= 0')
         self.__height = value
 
-    
     def area(self):
         """
         Returns:
