@@ -3,6 +3,7 @@
 function that multiplies 2 matrices
 """
 
+
 def matrix_mul(m_a, m_b):
     """multiplies 2 matrices"""
     if not isinstance(m_a, list):
@@ -27,25 +28,15 @@ def matrix_mul(m_a, m_b):
         raise TypeError("each row of m_b must be of the same size")
     if len(m_a[0]) != len(m_b):
         raise ValueError("matrices can not be multiplied")
-   
-
     rows_A = len(m_a)
     cols_A = len(m_a[0])
     rows_B = len(m_b)
     cols_B = len(m_b[0])
-
     if cols_A != rows_B:
         return
-
-    
     C = [[0 for row in range(cols_B)] for col in range(rows_A)]
-
     for i in range(rows_A):
         for j in range(cols_B):
             for k in range(cols_A):
                 C[i][j] += m_a[i][k] * m_b[k][j]
     return C
-
-
-
-
