@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Square #1
+Square #2
 """
 
 
@@ -18,3 +18,7 @@ class Square(Rectangle):
 
     def area(self):
         return self.__size * self.__size
+
+    def __str__(self):
+        """print format area of rectangle"""
+        return "[Rectangle] {}/{}".format(self.__size, self.__size)
