@@ -5,7 +5,7 @@
 ------------------------
 First import class ``MyList``
 
-    >>> MyList = __import__('1-my_list').MyList
+  >>> MyList = __import__('1-my_list').MyList
 
 Basic usage:
   >>> my_list = MyList()
