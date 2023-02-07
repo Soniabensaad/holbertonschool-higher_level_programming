@@ -1,0 +1,35 @@
+``1. My list`` 
+===============================
+
+``prints the list, but sorted``
+------------------------
+First import class ``MyList``
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Basic usage:
+  >>> my_list = MyList()
+  >>> my_list.append(0)
+  >>> my_list.append(3)
+  >>> my_list.append(1)
+  >>> my_list.append(2)
+  >>> print(my_list)
+  [0, 3, 1, 2]
+
+Print list sorted with basic:
+  >>> my_list.print_sorted()
+  [0, 1, 2, 3]
+
+Big int usage:
+  >>> my_list = MyList()
+  >>> my_list.append(-9897)
+  >>> my_list.append(0)
+  >>> my_list.append(-4)
+  >>> my_list.append(2)
+  >>> my_list.append(1)
+  >>> print(my_list)
+  [-9897, 0, -4, 2, 1]
+
+Print sorted list with big int usage:
+  >>> my_list.print_sorted()
+  [-9897, -4, 0, 1, 2]
