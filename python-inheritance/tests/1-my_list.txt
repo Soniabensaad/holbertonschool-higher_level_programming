@@ -19,6 +19,9 @@ Basic usage:
 Print list sorted with basic:
   >>> my_list.print_sorted()
   [0, 1, 2, 3]
+  >>> print(my_list)
+  [0, 3, 1, 2]
+
 
 Big int usage:
   >>> my_list = MyList()
@@ -33,3 +36,14 @@ Big int usage:
 Print sorted list with big int usage:
   >>> my_list.print_sorted()
   [-9897, -4, 0, 1, 2]
+  >>> print(my_list)
+  [-9897, 0, -4, 2, 1]
+
+Print empty list:
+ >>> my_list = MyList()
+ >>> print(my_list)
+ []
+ >>> my_list.print_sorted()
+ []
+ >>> print(my_list)
+ []
