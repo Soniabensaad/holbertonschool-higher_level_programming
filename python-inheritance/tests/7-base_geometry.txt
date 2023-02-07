@@ -56,6 +56,30 @@ Function integer_validator list usage:
     ...
     TypeError: holberton must be an integer
 
+Function integer_validator list usage:
+    >>> bg.integer_validator("holberton", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
+Function integer_validator list usage:
+    >>> bg.integer_validator("holberton", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
+Function integer_validator list usage:
+    >>> bg.integer_validator("holberton", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
+Function integer_validator list usage:
+    >>> bg.integer_validator("holberton", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: holberton must be an integer
+
 Function integer_validator no input usage:
     >>> bg.integer_validator()
     Traceback (most recent call last):
