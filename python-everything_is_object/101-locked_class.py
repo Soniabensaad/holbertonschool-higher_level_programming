@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Low memory cost"""
+
+
 class LockedClass:
     """no class or object attribute
     , that prevents the user from dynamically creating 
