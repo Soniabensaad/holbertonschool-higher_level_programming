@@ -8,18 +8,23 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """class inherits from Rectangle """
+    """Square data that inherits from Rectangle
+       init `size` twice because width and height are same in squares
+    """
+
     def __init__(self, size):
-        """private instance/positive validated by
-        integer_validator from class basegeometry by super() """
         super().integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
 
     def area(self):
-        """returns area"""
+        """Method to calculate area of the square
+        """
+
         return self.__size * self.__size
 
     def __str__(self):
-        """print format area of rectangle"""
-        return "[Rectangle] {}/{}".format(self.__size, self.__size)
+        """Magic method to print square description
+        """
+
+        return "[Square] {}/{}".format(self.__size, self.__size)
