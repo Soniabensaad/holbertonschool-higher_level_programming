@@ -3,6 +3,7 @@
 Integer validator
 """
 
+
 class BaseGeometry:
     """ a class named BaseGeometry """
     def area(self):
@@ -10,6 +11,7 @@ class BaseGeometry:
         with the message area() is not implemented
         """
         raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """validate value"""
         if not isinstance(value, int):
