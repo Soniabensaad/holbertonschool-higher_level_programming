@@ -23,4 +23,3 @@ class Student:
                 if i in self.__dict__.keys():
                     a[i] = self.__dict__[i]
             return a
-
