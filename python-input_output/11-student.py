@@ -28,5 +28,3 @@ class Student:
     def reload_from_json(self, json):
         for j in json.keys():
             self.__dict__[j] = json[j]
-
-
