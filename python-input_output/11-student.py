@@ -3,6 +3,8 @@
 """
 Student to disk and reload
 """
+
+
 class Student:
     """class Student that defines a student """
 
@@ -26,3 +28,4 @@ class Student:
     def reload_from_json(self, json):
         for j in json.keys():
             self.__dict__[j] = json[j]
+
