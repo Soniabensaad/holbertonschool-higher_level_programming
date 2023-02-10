@@ -4,14 +4,15 @@ Pascal's Triangle
 Technical interview preparation
 """
 
+
 def pascal_triangle(n):
     """returns a list of lists of integers representing
     the Pascal’s triangle of n"""
     new = []
-    if n<= 0:
+    if n <= 0:
         return new
     for i in range(n):
-        pascal= []
+        pascal = []
         for j in range(i + 1):
             if j == 0:
                 pascal.append(1)
