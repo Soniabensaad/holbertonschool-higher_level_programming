@@ -37,7 +37,7 @@ class Rectangle(Base):
     def width(self):
         """get to introduce width"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """set a value to width"""
@@ -46,10 +46,12 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
+
     @property
     def height(self):
         """get to introduce height"""
         return self.__height
+
     @height.setter
     def height(self, value):
         """set a value to height"""
@@ -58,10 +60,12 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
+
     @property
     def x(self):
         """get to introduce x"""
         return self.__x
+
     @x.setter
     def x(self, value):
         """set a value to x"""
@@ -70,10 +74,12 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
+
     @property
     def y(self):
         """get to introduce y"""
         return self.__y
+
     @y.setter
     def y(self, value):
         """set a value to y"""
