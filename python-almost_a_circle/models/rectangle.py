@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 Introduce class Rectangle inherits from base 
 we should import from models the class Base
 """
 
-
+from models.base import Base
 class Rectangle(Base):
     """a class inherits from Base
     class Rectangle that inherits from Base:
