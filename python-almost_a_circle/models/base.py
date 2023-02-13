@@ -11,7 +11,7 @@ class Base:
      -class constructor: def __init__(self, id=None)::
           +if id is not None, assign the public instance attribute id
            with this argument value+
-          + increment __nb_objects and assign 
+          + increment __nb_objects and assign
           the new value to the public instance attribute id+
     """
     """
