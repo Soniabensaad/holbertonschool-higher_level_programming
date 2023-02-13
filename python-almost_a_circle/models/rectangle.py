@@ -25,7 +25,7 @@ class Rectangle(Base):
             *Assign each argument
                 width, height, x and y to the right attribute-
     """
-    def __init__(self ,width=0, height=0, x=0, y=0, id=None):
+    def __init__(self, width=0, height=0, x=0, y=0, id=None):
         """private instance attributes to Rectangle"""
         super().__init__(id)
         self.width = width
