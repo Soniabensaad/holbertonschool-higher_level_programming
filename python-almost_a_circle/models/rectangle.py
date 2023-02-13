@@ -1,7 +1,22 @@
 #!/usr/bin/python3
 from models.base import Base
+"""
+Introduce class Rectangle inherits from base 
+we should import from models the class Base
+"""
+
+
 class Rectangle(Base):
-    """a class inherits from Base"""
+    """a class inherits from Base
+    class Rectangle that inherits from Base:
+       +Class Rectangle inherits from Base
+       +Private instance attributes,
+       each with its own public getter and setter:
+            -__width -> width
+            -__height -> height
+            -__x -> x
+            -__y -> y
+    """
     def __init__(self,width=0, height=0, x=0, y=0, id=None):
         """private instance attributes to Rectangle"""
         super().__init__(id)
