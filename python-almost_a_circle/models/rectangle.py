@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """
-Introduce class Rectangle inherits from base 
+Introduce class Rectangle inherits from base
 we should import from models the class Base
 """
 
 from models.base import Base
+
+
 class Rectangle(Base):
     """a class inherits from Base
     class Rectangle that inherits from Base:
@@ -15,10 +17,12 @@ class Rectangle(Base):
             -__height -> height
             -__x -> x
             -__y -> y
-        +Class constructor: def __init__(self, width, height, x=0, y=0, id=None):
+        +Class constructor: def __init__(self, width,
+        height, x=0, y=0, id=None):
             *Call the super class with id
-              - this super call with use the logic of the __init__ of the Base class
-            *Assign each argument 
+              - this super call with use the logic
+              of the __init__ of the Base class
+            *Assign each argument
                 width, height, x and y to the right attribute-
     """
     def __init__(self,width=0, height=0, x=0, y=0, id=None):
@@ -42,12 +46,10 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-
     @property
     def height(self):
         """get to introduce height"""
         return self.__height
-    
     @height.setter
     def height(self, value):
         """set a value to height"""
@@ -56,12 +58,10 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-    
     @property
     def x(self):
         """get to introduce x"""
         return self.__x
-    
     @x.setter
     def x(self, value):
         """set a value to x"""
@@ -70,12 +70,10 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-    
     @property
     def y(self):
         """get to introduce y"""
         return self.__y
-    
     @y.setter
     def y(self, value):
         """set a value to y"""
@@ -84,6 +82,3 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
-
-
