@@ -96,9 +96,11 @@ class Rectangle(Base):
     def display(self):
         """prints in stdout the Rectangle
         instance with the character #"""
-        
+        for space_y in range(self.__y):
+            print()
         for b in range(self.__height):
-            
+            for space_x in range(self.__x):
+                print(" ", end="")
             for i in range(self.__width):
                 print("#", end="")
             print()
@@ -110,3 +112,26 @@ class Rectangle(Base):
         str = "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
         return str
+
+    def update(self, *args):
+        """Assign an argument to each attribute:
+              -1st argument should be the id attribute
+              -2nd argument should be the width attribute
+              -3rd argument should be the height attribute
+              -4th argument should be the x attribute
+              -5th argument should be the y attribute"""
+        j = 0
+        for i in args:
+            if (j == 0):
+                self.id = i
+            if (j == 1):
+                self.width = i
+            if (j == 2):
+                self.height = i
+            if (j == 3):
+                self.x = i
+            if (j == 4):
+                self.y = i
+            j += 1
+
+
