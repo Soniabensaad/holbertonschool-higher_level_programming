@@ -113,7 +113,23 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
         return str
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        """**kwargs can be thought of as a double pointer to a dictionary: key/value
+          As Python doesn’t have pointers, 
+          **kwargs is not literally a double pointer – describing it as such is just a way of explaining its behavior in terms you’re already familiar with
+          **kwargs must be skipped if *args exists and is not empty
+        Each key in this dictionary represents an attribute to the instance"""
+        for i in kwargs:
+            if (i == 'id'):
+                self.__id = kwargs[i]
+            if (i == 'width'):
+                self.__width = kwargs[i]
+            if (i == 'height'):
+                self.__height = kwargs[i]
+            if (i == 'x'):
+                self.__x= kwargs[i]
+            if (i == 'y'):
+                self.__y = kwargs[i]
         """Assign an argument to each attribute:
               -1st argument should be the id attribute
               -2nd argument should be the width attribute
@@ -123,13 +139,13 @@ class Rectangle(Base):
         j = 0
         for i in args:
             if (j == 0):
-                self.id = i
+                self.__id = i
             if (j == 1):
-                self.width = i
+                self.__width = i
             if (j == 2):
-                self.height = i
+                self.__height = i
             if (j == 3):
-                self.x = i
+                self.__x = i
             if (j == 4):
-                self.y = i
+                self.__y = i
             j += 1
