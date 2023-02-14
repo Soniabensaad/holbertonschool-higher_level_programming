@@ -121,15 +121,15 @@ class Rectangle(Base):
         Each key in this dictionary represents an attribute to the instance"""
         for i in kwargs:
             if (i == 'id'):
-                self.__id = kwargs[i]
+                self.id = kwargs[i]
             if (i == 'width'):
-                self.__width = kwargs[i]
+                self.width = kwargs[i]
             if (i == 'height'):
-                self.__height = kwargs[i]
+                self.height = kwargs[i]
             if (i == 'x'):
-                self.__x= kwargs[i]
+                self.x= kwargs[i]
             if (i == 'y'):
-                self.__y = kwargs[i]
+                self.y = kwargs[i]
         """Assign an argument to each attribute:
               -1st argument should be the id attribute
               -2nd argument should be the width attribute
