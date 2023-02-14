@@ -7,6 +7,7 @@ we should import from models the class Rectangle
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """
     Write the class Square that inherits from Rectangle:
@@ -28,7 +29,7 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-    
+
     @property
     def size(self):
         """get a size"""
