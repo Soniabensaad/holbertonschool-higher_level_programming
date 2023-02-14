@@ -4,6 +4,7 @@ Introduce class Square inherits from Rectangle
 we should import from models the class Rectangle
 """
 
+
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
@@ -14,7 +15,8 @@ class Square(Rectangle):
        Class Square inherits from Rectangle
        Class constructor: def __init__(self, size, x=0, y=0, id=None)::
        Call the super class with id, x, y, width and height -
-        this super call will use the logic of the __init__ of the Rectangle class.
+        this super call will use the logic of
+         the __init__ of the Rectangle class.
          The width and height must be assigned to the value of size
         You must not create new attributes for this class,
         use all attributes of Rectangle -
@@ -38,7 +40,6 @@ class Square(Rectangle):
         self.height = value
         self.width = value
 
-
     def __str__(self):
         """Update the class Square by overriding
         the __str__ method so that it returns
@@ -46,4 +47,3 @@ class Square(Rectangle):
         str = "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.size)
         return str
-
