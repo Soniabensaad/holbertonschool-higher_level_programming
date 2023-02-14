@@ -133,5 +133,3 @@ class Rectangle(Base):
             if (j == 4):
                 self.y = i
             j += 1
-
-
