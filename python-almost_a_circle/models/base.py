@@ -64,7 +64,7 @@ class Base:
             return []
         return json.loads(json_string)
 
-    @staticmethod
+    @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set
         To use the update method to assign all attributes,
