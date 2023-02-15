@@ -4,6 +4,7 @@ Introduce class Base
 """
 import json
 
+
 class Base:
     """a new class called Base
     Class Base:
@@ -29,7 +30,7 @@ class Base:
             without guetter or setter method
             """
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation
