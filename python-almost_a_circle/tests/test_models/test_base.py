@@ -2,7 +2,7 @@
 """Unittest base.
 Test cases for class Base.
 """
-from models import Base
+from models.base import Base
 import unittest
 class TestBase(unittest.TestCase):
 
