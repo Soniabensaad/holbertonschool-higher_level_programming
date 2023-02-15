@@ -77,4 +77,3 @@ class Base:
             return None
         dummy.update(**dictionary)
         return dummy
-   
