@@ -77,6 +77,7 @@ class Base:
             return None
         dummy.update(**dictionary)
         return dummy
+
     @classmethod
     def load_from_file(cls):
         """File to instances"""
@@ -91,7 +92,3 @@ class Base:
         except FileNotFoundError:
             list_instances = []
         return list_instances
-
-
-        
-
