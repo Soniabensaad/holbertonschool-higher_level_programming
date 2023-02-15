@@ -50,12 +50,9 @@ class Base:
              The filename must be: <Class name>.json - example: Rectangle.json
              You must use the static method to_json_string (created before)
              You must overwrite the file if it already exists"""
-       
         list = []
         filename = f"{cls.__name__}.json"
         if list_objs:
-            list =[a.to_dictionary() for a in (list_objs)]
+            list = [a.to_dictionary() for a in (list_objs)]
         with open(filename, "w", encoding="utf-8") as f:
             f.write(Base.to_json_string(list))
-
-
