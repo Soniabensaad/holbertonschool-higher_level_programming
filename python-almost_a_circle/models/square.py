@@ -48,3 +48,38 @@ class Square(Rectangle):
         """set a size"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """assigns attributes:
+            *args is the list of arguments - no-keyworded arguments
+                1st argument should be the id attribute
+                2nd argument should be the size attribute
+                3rd argument should be the x attribute
+                4th argument should be the y attribute
+            **kwargs can be thought of as a double pointer to a dictionary:
+                 key/value (keyworded arguments)"""
+        for i in kwargs:
+            if (i == 'id'):
+                self.id = kwargs[i]
+            if (i == 'size'):
+                self.size = kwargs[i]
+            if (i == 'x'):
+                self.x = kwargs[i]
+            if (i == 'y'):
+                self.y = kwargs[i]
+        j = 0
+        for i in args:
+            if (j == 0):
+                self.id = i
+            if (j == 1):
+                self.size = i
+            if (j == 2):
+                self.x = i
+            if (j == 3):
+                self.y = i
+            j += 1
+        
+    def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
+        return {'id':self.id, 'x':self.x, 'size':self.size,
+         'y':self.y}
