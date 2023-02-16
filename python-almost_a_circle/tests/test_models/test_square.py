@@ -95,7 +95,7 @@ class TestSquare(unittest.TestCase):
         r1 = Square(10, 2, 1)
         r1_dictionary = r1.to_dictionary()
         r_dictionary = {'x': 1, 'y': 9, 'id': 2, 'size': 1}
-        
+        self.assertEqual(len(r1_dictionary), len(r_dictionary))
         self.assertEqual(type(r1_dictionary), dict)
         r2 = Square(1, 1)
         r2.update(**r1_dictionary)
