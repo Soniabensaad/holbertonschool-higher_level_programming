@@ -101,7 +101,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 1)
         self.assertEqual(r1.height, 2)
 
-    
+    def test_to_dict_rectangle(self):
+        r1 = Rectangle(10, 2, 1, 9)
+        r1_dictionary = r1.to_dictionary()
+        r_dictionary = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        self.assertEqual(len(r1_dictionary), len(r_dictionary))
+        self.assertEqual(type(r1_dictionary), dict)
+        r2 = Rectangle(1, 1)
+        r2.update(**r1_dictionary)
+        r2_dictionary = r2.to_dictionary()
+        self.assertEqual(len(r1_dictionary), len(r2_dictionary))
+        self.assertEqual(type(r2_dictionary), dict)
+        self.assertFalse(r1 == r2)
 
 
 

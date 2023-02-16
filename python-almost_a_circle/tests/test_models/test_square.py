@@ -92,12 +92,12 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s, s)
 
     def test_to_dict_rectangle(self):
-        r1 = Rectangle(10, 2, 1, 9)
+        r1 = Square(10, 2, 1)
         r1_dictionary = r1.to_dictionary()
-        r_dictionary = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
-        self.assertEqual(len(r1_dictionary), len(r_dictionary))
+        r_dictionary = {'x': 1, 'y': 9, 'id': 2, 'size': 1}
+        
         self.assertEqual(type(r1_dictionary), dict)
-        r2 = Rectangle(1, 1)
+        r2 = Square(1, 1)
         r2.update(**r1_dictionary)
         r2_dictionary = r2.to_dictionary()
         self.assertEqual(len(r1_dictionary), len(r2_dictionary))
