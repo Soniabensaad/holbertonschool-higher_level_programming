@@ -80,4 +80,20 @@ class TestSquare(unittest.TestCase):
         s.update(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
         self.assertEqual(s, s)
 
+    def test_create_square(self):
+        """test for Dictionary to Instance"""
+        with self.assertRaises(TypeError) as x:
+            s = Square.create(**{'id': 89})
+        self.assertEqual(
+            str("__init__() missing 1 required positional argument: 'size'", x.exception))
+
+        s = Square.create(**{'id': 89, 'size': 1})
+        self.assertEqual(s, s)
+
+        s = Square.create(**{'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(s, s)
+
+        s = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
+        self.assertEqual(s, s)
+
 
