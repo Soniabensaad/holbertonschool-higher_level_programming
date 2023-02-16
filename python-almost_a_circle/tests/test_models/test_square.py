@@ -42,3 +42,42 @@ class TestSquare(unittest.TestCase):
             s = Square(0)
         self.assertEqual("width must be > 0", str(x.exception))
 
+    def test_update(self):
+        """update(self, *args, **kwargs)"""
+        s = Square(1, 1, 2, 5)
+        s.update()
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(98)
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(89, 1)
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(89, 1, 2)
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(89, 1, 2, 3)
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(**{'id': 89})
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(**{'id': 89, 'size': 1})
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(**{'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(s, s)
+
+        s = Square(1, 1, 2, 5)
+        s.update(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
+        self.assertEqual(s, s)
+
+
