@@ -1,34 +1,45 @@
-#!/usr/bin/python3
-"""Unittest base.
-Test cases for class Base.
-"""
 import unittest
+import io
+import contextlib
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
-class TestRectangleMethods(unittest.TestCase):
-    """ Defines tests for Rectangle class """
+class TestRectangle(unittest.TestCase):
+    """Test cases for the Rectangle class."""
 
-  
-    
+    def setUp(self):
+        Base._Base__nb_objects = 0
 
-    def test_randos_id(self):
-        """ Test random arguments passed """
-        r1 = Rectangle(10, 2)
-        r2 = Rectangle(2, 10)
+    def test_2_0(self):
+        """Test Rectangle class: check for id."""
+
+        r0 = Rectangle(1, 2)
+        self.assertEqual(r0.id, 1)
+        r1 = Rectangle(2, 3)
+        self.assertEqual(r1.id, 2)
+        r2 = Rectangle(3, 4)
+        self.assertEqual(r2.id, 3)
         r3 = Rectangle(10, 2, 0, 0, 12)
-        r4 = Rectangle(2, 10)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
         self.assertEqual(r3.id, 12)
-        self.assertEqual(r4.id, 3)
+        r4 = Rectangle(10, 2, 4, 5, 34)
+        self.assertEqual(r4.id, 34)
+        r5 = Rectangle(10, 2, 4, 5, -5)
+        self.assertEqual(r5.id, -5)
+        r6 = Rectangle(10, 2, 4, 5, 9)
+        self.assertEqual(r6.id, 9)
 
-    def test_class(self):
-        """ Test Rectangle class type """
-        self.assertEqual(str(Rectangle),
-                         "<class 'models.rectangle.Rectangle'>")
+    def test_2_1(self):
+        """Test Rectangle class: check for attributes values."""
 
-    def test_class_inheritance(self):
-        """ Test if Rectangle inherits from Base """
-        self.assertTrue(issubclass(Rectangle, Base))
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 0)
+        self.assertEqual(r1.y, 0)
+        r2 = Rectangle(10, 2, 4, 5, 24)
+        self.assertEqual(r2.width, 10)
+        self.assertEqual(r2.height, 2)
+        self.assertEqual(r2.x, 4)
+        self.assertEqual(r2.y, 5)
