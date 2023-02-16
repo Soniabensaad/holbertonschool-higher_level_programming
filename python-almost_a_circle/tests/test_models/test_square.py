@@ -12,8 +12,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s0.width, 1)
         s2 = Square(1, 2)
         self.assertEqual(s2.x, 2)
-        s3 = Square(2, 3)
-        self.assertEqual(s3.y, 3)
         s1 = Square(5, 3, 4)
         self.assertEqual(s1.height, 5)
         self.assertEqual(s1.width, 5)
@@ -25,23 +23,32 @@ class TestSquare(unittest.TestCase):
         """checks for wrong attributes."""
 
         with self.assertRaises(TypeError) as x:
-            s = Square("a", 2)
-        self.assertEqual("width must be an integer", str(x.exception))
+            s4 = Square("1")
+        self.assertEqual(str(x.exception), "width must be an integer")
+
         with self.assertRaises(TypeError) as x:
-            s = Square(2, "b")
-        self.assertEqual("x must be an integer", str(x.exception))
+            s5 = Square(1, "2")
+        self.assertEqual(str(x.exception), "x must be an integer")
+
+        s6 = Square(1, 2, 3, 4)
+        self.assertEqual(s6.id, 4)
+
+        with self.assertRaises(ValueError) as x:
+            s7 = Square(-1)
+        self.assertEqual(str(x.exception), "width must be > 0")
+
+        with self.assertRaises(ValueError) as x:
+            s8 = Square(1, -2)
+        self.assertEqual(str(x.exception), "x must be >= 0")
+
+        with self.assertRaises(ValueError) as x:
+            s9 = Square(1, 2, -3)
+        self.assertEqual(str(x.exception), "y must be >= 0")
+
+        with self.assertRaises(ValueError) as x:
+            s10 = Square(0)
+        self.assertEqual(str(x.exception), "width must be > 0")
+
         with self.assertRaises(TypeError) as x:
-            s = Square(1, 2, "c", 3)
-        self.assertEqual("y must be an integer", str(x.exception))
-        with self.assertRaises(ValueError) as x:
-            s = Square(0, 2)
-        self.assertEqual("width must be > 0", str(x.exception))
-        with self.assertRaises(ValueError) as x:
-            s = Square(-1)
-        self.assertEqual("width must be > 0", str(x.exception))
-        with self.assertRaises(ValueError) as x:
-            s = Square(2, -2)
-        self.assertEqual("x must be >= 0", str(x.exception))
-        with self.assertRaises(ValueError) as x:
-            s = Square(2, 5, -1, 6)
-        self.assertEqual("y must be >= 0", str(x.exception))
+            s11 = Square(1, 2, "3")
+        self.assertEqual(str(x.exception), "y must be an integer")
