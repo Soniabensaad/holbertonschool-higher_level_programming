@@ -90,6 +90,13 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
+    def test_str(self):
+        """checks for the str representation"""
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r1)
+        r2 = Rectangle(5, 5, 1)
+        self.assertEqual(r2)
+
 
 
 
