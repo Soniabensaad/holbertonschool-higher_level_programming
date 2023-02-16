@@ -6,8 +6,8 @@ import unittest
 from models.rectangle import Rectangle
 
 
-class TestBase(unittest.TestCase):
-    def test_rectangle(self):
+class TestRectangle(unittest.TestCase):
+    def test_Rectangle(self):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 3)
 
