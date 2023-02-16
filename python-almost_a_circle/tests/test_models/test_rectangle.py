@@ -11,6 +11,7 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
     def test_id(self):
+        """test id"""
 
         r0 = Rectangle(1, 2)
         self.assertEqual(r0.id, 1)
@@ -28,6 +29,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r6.id, 9)
 
     def test_width_height_x_y(self):
+        """test attributes class"""
 
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.width, 10)
@@ -39,3 +41,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.height, 2)
         self.assertEqual(r2.x, 4)
         self.assertEqual(r2.y, 5)
+    
+    def test_missing_arguments(self):
+        
+        with self.assertRaises(TypeError) as e:
+            r0 = Rectangle(5)
+        self.assertEqual(
+            "__init__() missing 1 required positional argument: 'height'", str(
+                e.exception))
+        s = ("__init__() missing 2 required positional" +
+             " arguments: 'width' and 'height'")
+        with self.assertRaises(TypeError) as e:
+            r1 = Rectangle()
+        self.assertEqual(s, str(e.exception))
