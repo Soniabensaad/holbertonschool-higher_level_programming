@@ -97,6 +97,27 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(r2, r2)
 
+    def test_update_args(self):
+        """update for *args method"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+        r1.update(89, 2)
+        self.assertEqual(r1.width, 2)
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.height, 3)
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.x, 4)
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.y, 5)
+        r1.update()
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
+
+
+   
+    
+    
+
 
 
 
