@@ -90,6 +90,33 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
+    def test_update(self):
+        """update(self, *args, **kwargs)"""
+        r = Rectangle(1, 1)
+        s.update()
+        self.assertEqual(s.id, s.id)
+
+        s = Rectangle(1, 1)
+        r.update(89)
+        self.assertEqual(s.id, 89)
+
+        r = Rectangle(1, 1)
+        r.update(89, 1)
+        self.assertEqual(s.width, 1)
+
+        r = Rectangle(1, 1)
+        r.update(89, 1, 2)
+        self.assertEqual(s.height, 2)
+
+        s = Rectangle(1, 1)
+        s.update(89, 1, 2, 3)
+        self.assertEqual(s.x, 3)
+
+        s = Rectangle(1, 1)
+        s.update(89, 1, 2, 3, 4)
+        self.assertEqual(s.y, 4)
+
+
     
 
 
