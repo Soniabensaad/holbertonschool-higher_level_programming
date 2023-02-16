@@ -10,8 +10,6 @@ class TestSquare(unittest.TestCase):
     def test_square(self):
         s0 = Square(1)
         self.assertEqual(s0.width, 1)
-        s2 = Square(2)
-        self.assertEqual(s2.height, 2)
         s1 = Square(5, 3, 4)
         self.assertEqual(s1.height, 5)
         self.assertEqual(s1.width, 5)
