@@ -91,38 +91,38 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.area(), 56)
 
     def test_str(self):
-        """checks for the str representation"""
         r1 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r1, r1)
-        r2 = Rectangle(5, 5, 1)
-        self.assertEqual(r2, r2)
 
-    def test_update_args(self):
-        """update for *args method"""
-        r1 = Rectangle(10, 10, 10, 10)
+    def test_to_to_dictionary(self):
+        r1 = Rectangle(10, 2, 1)
+        r1_d = r1.to_dictionary()
+        self.assertEqual(r1_d, r1_d)
+
+    def test_update(self):
+        r1 = Rectangle(10, 10)
         r1.update()
         self.assertEqual(r1.id, r1.id)
 
-        r2 = Rectangle(10, 10, 10, 10)
+        r2 = Rectangle(5, 5)
         r2.update(89)
         self.assertEqual(r2.id, 89)
 
-        r3 = Rectangle(10, 10, 10, 10)
-        r3.update(89, 2)
-        self.assertEqual(r3.width, 2)
+        r3 = Rectangle(5, 5)
+        r3.update(89, 1)
+        self.assertEqual(r3.width, 1)
 
-        r4 = Rectangle(10, 10, 10, 10)
-        r4.update(89, 2, 3)
-        self.assertEqual(r4.height, 3)
+        r4 = Rectangle(5, 5)
+        r4.update(89, 1, 2)
+        self.assertEqual(r4.height, 2)
 
-        r5 = Rectangle(10, 10, 10, 10)
-        r5.update(89, 2, 3, 4)
-        self.assertEqual(r5.x, 4)
+        r5 = Rectangle(5, 5)
+        r5.update(89, 1, 2, 3)
+        self.assertEqual(r5.x, 3)
 
-        r6 = Rectangle(10, 10, 10, 10)
-        r6.update(89, 2, 3, 4, 5)
-        self.assertEqual(r6.y, 5)
-
+        r6 = Rectangle(5, 5)
+        r6.update(89, 1, 2, 3, 4)
+        self.assertEqual(r6.y, 4)
 
    
     
