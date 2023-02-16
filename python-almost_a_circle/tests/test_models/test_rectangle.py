@@ -92,27 +92,27 @@ class TestRectangle(unittest.TestCase):
 
     def test_update_rectangle(self):
         """checks update"""
-        s = Rectangle(1, 2, 3, 4)
+        s = Rectangle(1, 1)
         s.update()
         self.assertEqual(s, s)
 
-        s = Rectangle(1, 2, 3, 4)
+        s = Rectangle(1, 1)
         s.update(89)
         self.assertEqual(s.id, 89)
 
-        s = Rectangle(1, 1, 2, 5)
+        s = Rectangle(1, 1)
         s.update(89, 1)
         self.assertEqual(s.width, 1)
 
-        s = Rectangle(1, 1, 2, 5)
+        s = Rectangle(1, 1)
         s.update(89, 1, 2)
         self.assertEqual(s.height, 2)
 
-        s = Rectangle(1, 2, 3, 4)
+        s = Rectangle(1, 1)
         s.update(89, 1, 2, 3)
         self.assertEqual(s.x, 3)
 
-        s = Rectangle(1, 2, 3, 4)
+        s = Rectangle(1, 1)
         s.update(89, 1, 2, 3, 4)
         self.assertEqual(s.y, 4)
 
