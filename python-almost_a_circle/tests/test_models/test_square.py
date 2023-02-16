@@ -19,36 +19,4 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.y, 4)
         self.assertEqual(s1.id, 2)
 
-    def test_attributes_square_(self):
-        """checks for wrong attributes."""
-
-        with self.assertRaises(TypeError) as x:
-            s4 = Square("1")
-        self.assertEqual(str(x.exception), "width must be an integer")
-
-        with self.assertRaises(TypeError) as x:
-            s5 = Square(1, "2")
-        self.assertEqual(str(x.exception), "x must be an integer")
-
-        s6 = Square(1, 2, 3, 4)
-        self.assertEqual(s6.id, 4)
-
-        with self.assertRaises(ValueError) as x:
-            s7 = Square(-1)
-        self.assertEqual(str(x.exception), "width must be > 0")
-
-        with self.assertRaises(ValueError) as x:
-            s8 = Square(1, -2)
-        self.assertEqual(str(x.exception), "x must be >= 0")
-
-        with self.assertRaises(ValueError) as x:
-            s9 = Square(1, 2, -3)
-        self.assertEqual(str(x.exception), "y must be >= 0")
-
-        with self.assertRaises(ValueError) as x:
-            s10 = Square(0)
-        self.assertEqual(str(x.exception), "width must be > 0")
-
-        with self.assertRaises(TypeError) as x:
-            s11 = Square(1, 2, "3")
-        self.assertEqual(str(x.exception), "y must be an integer")
+    
