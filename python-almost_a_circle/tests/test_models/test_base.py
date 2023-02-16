@@ -8,7 +8,7 @@ from models.base import Base
 
 class TestBase(unittest.TestCase):
 
-    def test_new_instance_id(self):
+    def test_id(self):
         b1 = Base()
         self.assertEqual(b1.id, 1)
         b2 = Base()
@@ -18,9 +18,9 @@ class TestBase(unittest.TestCase):
         b3 = Base(89)
         self.assertEqual(b3.id, 89)
 
-    def test_to_json_string_none(self):
-        rjson = Base.to_json_string(None)
-        self.assertEqual(rjson, '[]')
+    def test_to_json_string(self):
+        json = Base.to_json_string(None)
+        self.assertEqual(json, '[]')
 
         json_dictionary = Base.to_json_string([])
         self.assertEqual(json_dictionary, '[]')
