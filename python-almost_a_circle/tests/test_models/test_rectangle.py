@@ -85,12 +85,10 @@ class TestRectangle(unittest.TestCase):
         """checks for the area"""
         r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)
-
-        r2 = Rectangle(2, 10)
-        self.assertEqual(r2.area(), 20)
-
+        r2 = Rectangle(11, 2)
+        self.assertEqual(r2.area(), 22)
         r3 = Rectangle(8, 7, 0, 0, 12)
-        self.assertEqual(r1.area(), 56)
+        self.assertEqual(r3.area(), 56)
 
 
 
