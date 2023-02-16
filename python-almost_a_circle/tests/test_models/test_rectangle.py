@@ -42,15 +42,43 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.x, 4)
         self.assertEqual(r2.y, 5)
     
-    def test_missing_arguments(self):
-        
-        with self.assertRaises(TypeError) as e:
-            r0 = Rectangle(5)
-        self.assertEqual(
-            "__init__() missing 1 required positional argument: 'height'", str(
-                e.exception))
-        s = ("__init__() missing 2 required positional" +
-             " arguments: 'width' and 'height'")
-        with self.assertRaises(TypeError) as e:
-            r1 = Rectangle()
-        self.assertEqual(s, str(e.exception))
+    def test_wrong(self):
+        """Test Rectangle class: check for wrong attributes."""
+
+        with self.assertRaises(TypeError) as x:
+            r1 = Rectangle("a", 2)
+        self.assertEqual("width must be an integer", str(x.exception))
+
+        with self.assertRaises(TypeError) as x:
+            r2 = Rectangle(2, "b")
+        self.assertEqual("height must be an integer", str(x.exception))
+
+        with self.assertRaises(TypeError) as x:
+            r3 = Rectangle(1, 2, "c", 3)
+        self.assertEqual("x must be an integer", str(x.exception))
+
+        with self.assertRaises(TypeError) as x:
+            r4 = Rectangle(1, 2, 2, "d")
+        self.assertEqual("y must be an integer", str(x.exception))
+
+        with self.assertRaises(ValueError) as x:
+            r5 = Rectangle(0, 2)
+        self.assertEqual("width must be > 0", str(x.exception))
+
+        with self.assertRaises(ValueError) as x:
+            r6 = Rectangle(2, 0)
+        self.assertEqual("height must be > 0", str(x.exception))
+
+        with self.assertRaises(ValueError) as x:
+            r7 = Rectangle(2, -1)
+        self.assertEqual("height must be > 0", str(x.exception))
+
+        with self.assertRaises(ValueError) as x:
+            r8 = Rectangle(2, 5, -5, 6)
+        self.assertEqual("x must be >= 0", str(x.exception))
+
+        with self.assertRaises(ValueError) as x:
+            r9 = Rectangle(2, 8, 9, -6)
+        self.assertEqual("y must be >= 0", str(x.exception))
+
+
