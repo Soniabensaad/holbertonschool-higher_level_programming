@@ -1,6 +1,4 @@
 import unittest
-import io
-import contextlib
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -9,11 +7,9 @@ from models.square import Square
 class TestRectangle(unittest.TestCase):
     """Test cases for the Rectangle class."""
 
-    def setUp(self):
-        Base._Base__nb_objects = 0
+    
 
     def test_2_0(self):
-        """Test Rectangle class: check for id."""
 
         r0 = Rectangle(1, 2)
         self.assertEqual(r0.id, 1)
@@ -31,7 +27,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r6.id, 9)
 
     def test_2_1(self):
-        """Test Rectangle class: check for attributes values."""
 
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.width, 10)
