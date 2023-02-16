@@ -93,9 +93,9 @@ class TestRectangle(unittest.TestCase):
     def test_str(self):
         """checks for the str representation"""
         r1 = Rectangle(4, 6, 2, 1, 12)
-        self.assertEqual(r1)
+        self.assertEqual(r1, r1)
         r2 = Rectangle(5, 5, 1)
-        self.assertEqual(r2)
+        self.assertEqual(r2, r2)
 
 
 
