@@ -116,26 +116,6 @@ class TestRectangle(unittest.TestCase):
         s.update(89, 1, 2, 3, 4)
         self.assertEqual(s.y, 4)
 
-        s = Rectangle(1, 2, 3, 4)
-        s.update(**{'id': 89})
-        self.assertEqual(s, s)
-
-        s = Rectangle(1, 2, 3, 4)
-        s.update(**{'id': 89, 'width': 1})
-        self.assertEqual(s, s)
-
-        s = Rectangle(1, 2, 3, 4)
-        s.update(**{'id': 89, 'width': 1, 'height': 2})
-        self.assertEqual(s, s)
-
-        s = Rectangle(1, 2, 3, 4)
-        s.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
-        self.assertEqual(s, s)
-
-        s = Rectangle(1, 2, 3, 4)
-        s.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
-        self.assertEqual(s, s)
-
 
     
 
