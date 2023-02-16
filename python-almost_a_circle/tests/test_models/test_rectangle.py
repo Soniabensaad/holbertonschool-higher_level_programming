@@ -90,6 +90,53 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
+    def test_update_rectangle(self):
+        """checks update"""
+        s = Rectangle(1, 2, 3, 4)
+        s.update()
+        self.assertEqual(s, s)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(89)
+        self.assertEqual(s.id, 89)
+
+        s = Rectangle(1, 1, 2, 5)
+        s.update(89, 1)
+        self.assertEqual(s.width, 1)
+
+        s = Rectangle(1, 1, 2, 5)
+        s.update(89, 1, 2)
+        self.assertEqual(s.height, 2)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(89, 1, 2, 3)
+        self.assertEqual(s.x, 3)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(89, 1, 2, 3, 4)
+        self.assertEqual(s.y, 4)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(**{'id': 89})
+        self.assertEqual(s, s)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(**{'id': 89, 'width': 1})
+        self.assertEqual(s, s)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(s, s)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        self.assertEqual(s, s)
+
+        s = Rectangle(1, 2, 3, 4)
+        s.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertEqual(s, s)
+
+
     
 
 
