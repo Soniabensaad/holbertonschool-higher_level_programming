@@ -42,7 +42,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.x, 4)
         self.assertEqual(r2.y, 5)
     
-    def test_wrong(self):
+    def test_attributes_wrong(self):
         """Test Rectangle class: check for wrong attributes."""
 
         with self.assertRaises(TypeError) as x:
@@ -80,5 +80,18 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as x:
             r9 = Rectangle(2, 8, 9, -6)
         self.assertEqual("y must be >= 0", str(x.exception))
+    
+    def test_area(self):
+        """checks for the area"""
+        r1 = Rectangle(3, 2)
+        self.assertEqual(r1.area(), 6)
+
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r2.area(), 20)
+
+        r3 = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(r1.area(), 56)
+
+
 
 
