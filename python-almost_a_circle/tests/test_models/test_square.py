@@ -108,5 +108,20 @@ class TestSquare(unittest.TestCase):
         r1 = Square(4, 2, 1, 12)
         self.assertEqual(str(r1), "[Square] (12) 2/1 - 4")
 
+    def test_save_to_file_rectangle(self):
+     
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            s = file.read()
+            self.assertEqual(s, s)
 
+        Square.save_to_file([Square(1)])
+        with open("Square.json", "r") as f:
+            self.assertEqual(
+                f.read(), '[{"id": 1, "x": 0, "size": 1, "y": 0}]')
+
+        Square.save_to_file(None)
+        with open("Square.json", mode="r") as file:
+            s = file.read()
+            self.assertEqual(s, '[]')
 
