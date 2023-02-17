@@ -125,5 +125,14 @@ class TestSquare(unittest.TestCase):
             s = file.read()
             self.assertEqual(s, '[]')
 
-    
+    def test_load_square(self):
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        s = [s1, s2]
+
+        Square.save_to_file(s)
+
+        s = Square.load_from_file()
+        self.assertEqual(s, s)
+
 
