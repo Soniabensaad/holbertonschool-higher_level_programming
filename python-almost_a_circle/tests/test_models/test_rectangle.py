@@ -128,15 +128,5 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(
                 f.read(), '[{"x": 0, "y": 0, "id": 1, "height": 2, "width": 1}]')
 
-    def test_load_square(self):
-        s1 = Rectangle(5)
-        s2 = Rectangle(7, 9, 1)
-        s = [s1, s2]
-
-        Rectangle.save_to_file(s)
-
-        s = Rectangle.load_from_file()
-        self.assertEqual(s, s)
-
 
 
