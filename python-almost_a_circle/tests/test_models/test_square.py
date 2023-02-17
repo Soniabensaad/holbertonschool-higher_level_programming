@@ -104,4 +104,9 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(type(r2_dictionary), dict)
         self.assertFalse(r1 == r2)
 
+    def test_str_square(self):
+        r1 = Square(4, 2, 1, 12)
+        self.assertEqual(str(r1), "[Square] (12) 2/1 - 4")
+
+
 
