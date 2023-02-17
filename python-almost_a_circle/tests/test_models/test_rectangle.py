@@ -114,5 +114,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(type(r2_dictionary), dict)
         self.assertFalse(r1 == r2)
 
+    def test_str_rectangle(self):
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r1, r1)
+
 
 
