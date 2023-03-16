@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""takes in an argument and displays all values 
+"""takes in an argument and displays all values
 in the states table of hbtn_0e_0_usa
 where name matches the argument."""
 import MySQLdb
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     db_s = sys.argv[4]
     c = db.cursor()
     c.execute("SELECT * FROM states WHERE name = '{}'\
-              ORDER BY states.id ASC".format(db_s))
+              ORDER BY states.id".format(db_s))
     for state in c.fetchall():
         print(state)
     c.close()
