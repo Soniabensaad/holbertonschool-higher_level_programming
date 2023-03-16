@@ -17,7 +17,7 @@ if __name__ == "__main__":
                          db=sys.argv[3])
     db_s = sys.argv[4]
     c = db.cursor()
-    c.execute("SELECT * FROM states WHERE name = '{}'\
+    c.execute("SELECT * FROM states WHERE BINARY name = '{}'\
               ORDER BY states.id".format(db_s))
     for state in c.fetchall():
         print(state)
