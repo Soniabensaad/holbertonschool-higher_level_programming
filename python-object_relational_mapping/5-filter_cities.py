@@ -19,6 +19,7 @@ if __name__ == "__main__":
              cities.state_id = states.id\
               AND states.name = %s ORDER BY cities.id ASC"
     c.execute(cmd, (db_s, ))
+    ls = []
     ls = [state[0]for state in c.fetchall()]
     city = " ,".join(ls)
     print(city)
