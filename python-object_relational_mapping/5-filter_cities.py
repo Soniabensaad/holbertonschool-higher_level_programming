@@ -10,7 +10,7 @@ if __name__ == "__main__":
     sql = "SELECT cities.name FROM cities JOIN states ON\
     cities.state_id = states.id WHERE states.name=%s\
     ORDER BY cities.id"
-    num_rows = cur.execute(sql, (sys.argv[4],))
+    num = cur.execute(sql, (sys.argv[4],))
     rows = cur.fetchall()
     result = []
     i = 0
