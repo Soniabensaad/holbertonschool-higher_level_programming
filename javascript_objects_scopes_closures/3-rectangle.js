@@ -8,6 +8,9 @@ class Rectangle {
       this.height = h;
     }
     print() {
+        if (!this.width || !this.height) {
+            return;
+        }
         for (let i = 0; i < this.height ; i++){
             let row ="";
             for (let j = 0; i< this.width; j++){
@@ -18,6 +21,5 @@ class Rectangle {
         }
     }
   }
-  
-  module.exports = Rectangle;
+
   
