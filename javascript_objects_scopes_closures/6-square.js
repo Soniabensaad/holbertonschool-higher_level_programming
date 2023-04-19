@@ -1,6 +1,6 @@
 #!/usr/bin/node
-
 const Rectangle = require('./5-rectangle');
+
 class Square extends Rectangle {
     constructor (size) {
       super(size, size);
@@ -19,5 +19,4 @@ class Square extends Rectangle {
       }
     }
   }
-
-module.exports = Square;
+  
