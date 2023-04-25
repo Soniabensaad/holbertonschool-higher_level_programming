@@ -9,17 +9,15 @@ request(url, (error, response, body)=>{
     }
     else {
         const todos = JSON.parse(body);
-        const com = {};
+        const completed = {};
         todos.forEach(todo => {
             if(todo.completed){
                 const userId = todo.userId;
-                com[userId] = (com[userId] ||0)+1;
-            
-
+                completed[userId] = (completed[userId] ||0)+1;
             }
         });
-        for (const [userId, count] of Object.entries(com)) {
-            console.log(com);
+        for (const [userId, count] of Object.entries(completed)) {
+            console.log(`${userId}: ${count}`);
+        }
     }
-}
 });
