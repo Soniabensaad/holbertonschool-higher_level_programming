@@ -135,4 +135,13 @@ class TestSquare(unittest.TestCase):
         s = Square.load_from_file()
         self.assertEqual(s, s)
 
+    def test_display(self):
+       
+        with self.assertRaises(TypeError) as x:
+            r1 = Rectangle(9, 6)
+            r1.display(9)
+        self.assertEqual(
+            "display() takes 1 positional argument but 2 were given", str(
+                x.exception))
+
 
